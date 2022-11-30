@@ -3,3 +3,6 @@
 # Team-members
 Rafael Barbosa
 Matthew Walker
+Carlos Bautista
+Jesus Perez Alvarado
+
