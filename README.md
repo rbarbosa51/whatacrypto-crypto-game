@@ -2,5 +2,7 @@
 
 # Team-members
 Rafael Barbosa
-Jesus Perez Alvarado
 Matthew Walker
+Carlos Bautista
+Jesus Perez Alvarado
+Yen Nguyen
