@@ -1,0 +1,32 @@
+#about-us{
+    margin: auto;
+    margin-top:-35px;
+    width: 50%;
+    }
+    
+#about-us-title{
+    text-align: center;
+    color: #209cee;
+    font-weight: bold;
+    }
+    
+#about-us-text{
+    text-align: center;
+    }
+    
+#meet-the-team-title{
+    text-align: center;
+    margin-top: 35px;
+    margin-bottom: 35px;
+    color: #209cee;
+    font-weight: bold;
+    }
+    
+.columns {
+    margin-left: 10%;
+    margin-right: 10%;
+    }
+    
+#team-box{
+    background-color: rgba(32,156,238,0.1)
+    }
