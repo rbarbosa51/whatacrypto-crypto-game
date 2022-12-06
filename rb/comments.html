@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comment Section</title>
+    <style>
+        * {
+            margin: 1rem;
+        }
+        .comment {
+            margin: 1rem;
+            width: 500px;
+        }
+        .aqua {
+            background-color: aqua;
+        }
+        .crimson {
+            background-color: crimson;
+        }
+    </style>
+</head>
+<body>
+    <h1>Comment Section</h1>
+    <form id="commentAdd">
+        <label for="name">Enter your name: </label>
+        <input type="text" name="name" required><br>
+        <label for="comment">Enter your comments: </label>
+        <input type="text" name="comment" required>
+        <button>Submit</button>
+    </form>
+    <div id="CommentSection">
+
+    </div>
+    
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js";
+        //import { getFirestore, collection, getDocs, addDoc, deleteDoc, doc } from 'https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js'
+        import { getFirestore, collection, onSnapshot, addDoc, deleteDoc, doc, query, where, orderBy } from 'https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js'
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+          apiKey: "AIzaSyAO1FmfV86c-nCIsYiCsgHDcP_nowv5-T4",
+          authDomain: "testing-48f03.firebaseapp.com",
+          projectId: "testing-48f03",
+          storageBucket: "testing-48f03.appspot.com",
+          messagingSenderId: "119377901303",
+          appId: "1:119377901303:web:f2dca73e627605e82645f2"
+        };
+        //Reference to the Comment Section Div
+        let commentSection = document.getElementById('CommentSection');
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        //Init services
+        const db = getFirestore();
+        //collection ref
+        const colRef = collection(db, 'Comments');
+        
+        onSnapshot(colRef, (snapshot) => {
+            let comments = [];
+            snapshot.docs.forEach( (doc) => {
+                comments.push({...doc.data(), id: doc.id})
+            })
+            //Log Comments
+            console.log(comments);
+
+            comments.forEach( (element) => {
+                
+                const tmpDiv = document.createElement('div');
+                tmpDiv.classList.add('comment');
+                const tmpNameDiv = document.createElement('span');
+                const tmpCommentDiv = document.createElement('span');
+                tmpNameDiv.innerText = element.Name;
+                //tmpNameDiv.classList.add('aqua');
+                tmpCommentDiv.innerText = element.Comment;
+                //tmpCommentDiv.classList.add('crimson');
+                tmpDiv.appendChild(tmpNameDiv);
+                tmpDiv.appendChild(tmpCommentDiv);
+                commentSection.appendChild(tmpDiv);
+            })
+
+        });
+
+        const addBookForm = document.getElementById('commentAdd');
+        addBookForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            addDoc(colRef, {
+                Name:  addBookForm.name.value,
+                Comment: addBookForm.comment.value
+            }). then( () => {
+                addBookForm.reset();
+            })
+        });
+
+        
+        
+      </script>
+</body>
+</html>
