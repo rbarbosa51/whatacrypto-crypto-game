@@ -22,6 +22,10 @@
     font-weight: bold;
     }
     
+#team-container{
+    margin-bottom: 200px;
+}
+
 .columns {
     margin-left: 10%;
     margin-right: 10%;
@@ -30,3 +34,20 @@
 #team-box{
     background-color: rgba(32,156,238,0.1)
     }
+
+#quote-box{
+    margin: auto;
+    margin-top: -275px;
+    width: 50%;
+    }
+
+#quote-text{
+    padding: 5%;
+    font-style: italic;
+    text-align: center;
+}
+
+#quote-author{
+    color: #209cee;
+    text-align: center;
+}
