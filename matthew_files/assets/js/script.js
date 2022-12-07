@@ -6,14 +6,20 @@ let score4 = document.querySelector('#number4');
 let score5 = document.querySelector('#number5');
 
 var pastPlayers = [
-    {name: "Joe1", score: 23 },
-    {name: "Joe2", score: 34 },
-    {name: "Joe3", score: 156 },
-    {name: "Joe4", score: 64 },
-    {name: "Joe5", score: 95 },
+    {name: "Joe1", score: -1000 },
+    {name: "Joe2", score: -10.030},
+    {name: "Joe3", score: 1400.923 },
+    {name: "Joe4", score: 110 },
+    {name: "Joe5", score: 95.239 },
 ];
 
-// var storage = localStorage.getItem(pastPlayers);
+var storageValue = localStorage.getItem("currentUser");
+console.log(storageValue);
+var tempObjects = {name: "currentUser", score: storageValue}
+console.log(tempObjects)
+
+pastPlayers.push(tempObjects)
+
 
 pastPlayers.sort((a, b) => b.score - a.score)
 
