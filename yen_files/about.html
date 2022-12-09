@@ -5,127 +5,157 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title> About Us </title>
+    <link rel="stylesheet" href="../glbAssets/about.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-    <link rel="stylesheet" href="./assets/about.css">
-    <script src="./assets/about.js"></script>
+    
+    <script defer src="./assets/about.js"></script>
 </head>
 
-<header>
-    <section class="hero is-info has-text-left">
-        <div class="hero-body">
-            <h1 class="title">What-a-Crypto</h1>
-        </div>
-    </section>
-</header>
-
 <body>
-    <div class="box" id="about-us">
-        <h2 class="subtitle" id="about-us-title">About Us</h2>
-        <p id="about-us-text">Pellentesque habitant morbi tristique senectus et netus et malesuada fames
+    <header>
+        <section class="hero is-info has-text-left">
+            <div class="hero-body">
+                <h1 class="title is-size-1">WhataCrypto</h1>
+            </div>
+        </section>
+    </header>
+
+    <div class="py-3">
+        <nav class="breadcrumb whatacrypto-blue has-arrow-separator">
+            <ul class="container">
+                <li><a href="../index.html">
+                    <span class="icon is-small">
+                        <i class="fas fa-home whatacrypto-blue"></i>
+                    </span>
+                    <span class="whatacrypto-blue">Home</span>
+                </a></li>
+                <li><a class="whatacrypto-blue">About</a></li>
+                
+            </ul>
+        </nav>
+    </div>
+
+
+    <div class="message box is-info">
+        <div class="message-header" id="quote-author">
+            
+        </div>
+        <div class="message-body">
+            <blockquote id="quote-text"></blockquote>
+        </div>
+    </div>
+    
+    <div class="is-size-8 px-5">
+        <h2 class="is-size-3 subtitle whatacrypto-blue has-text-centered">About Us</h2>
+        <p class="box has-text-centered whatacrypto-color2 py-5">Pellentesque habitant morbi tristique senectus et netus et malesuada fames
             ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu
             libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
     </div>
-
-    <h2 class="subtitle" id="meet-the-team-title"> Meet the Team </h2>
-
-    <section id="team-container">
-    <div class="block">
-        <div class="columns">
-            <div class="column is-one-fifth">
-                <figure class="image is-200x200">
-                    <img src="https://civilrights.msu.edu/_assets/images/placeholder/placeholder-200x200.jpg">
-                </figure>
-            </div>
-            <div class="column">
-                <div class="box" id="team-box">
-                    <p class="title is-5">Rafael</p>
-                    <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis
-                    egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit
-                    amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
-                </div>
-            </div>
-    </div>
-
-    <div class="block">
-        <div class="columns">
-            <div class="column is-one-fifth">
-                <figure class="image is-200x200">
-                    <img src="https://civilrights.msu.edu/_assets/images/placeholder/placeholder-200x200.jpg">
-                </figure>
-            </div>
-            <div class="column">
-                <div class="box" id="team-box">
-                    <p class="title is-5">Matthew</p>
-                    <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis
-                    egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit
-                    amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
-                </div>
-            </div>
-    </div>
-
-    <div class="block">
-        <div class="columns">
-            <div class="column is-one-fifth">
-                <figure class="image is-200x200">
-                    <img src="https://civilrights.msu.edu/_assets/images/placeholder/placeholder-200x200.jpg">
-                </figure>
-            </div>
-            <div class="column">
-                <div class="box" id="team-box">
-                    <p class="title is-5">Jesus</p>
-                    <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis
-                    egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit
-                    amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
-                </div>
-            </div>
-    </div>
-
-    <div class="block">
-        <div class="columns">
-            <div class="column is-one-fifth">
-                <figure class="image is-200x200">
-                    <img src="https://civilrights.msu.edu/_assets/images/placeholder/placeholder-200x200.jpg">
-                </figure>
-            </div>
-            <div class="column">
-                <div class="box" id="team-box">
-                    <p class="title is-5">Carlos</p>
-                    <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis
-                    egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit
-                    amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
-                </div>
-            </div>
-    </div>
-
-    <div class="block">
-        <div class="columns">
-            <div class="column is-one-fifth">
-                <figure class="image is-200x200">
-                    <img src="https://civilrights.msu.edu/_assets/images/placeholder/placeholder-200x200.jpg">
-                </figure>
-            </div>
-            <div class="column">
-                <div class="box" id="team-box">
-                    <p class="title is-5">Yen</p>
-                    <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis
-                    egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit
-                    amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
-                </div>
-            </div>
-    </div>
-    </section>
-
-    <section class="hero is-info">
-        <div class="hero-body">
-            <p class="title is-4 is-pulled-left">phone number</p>
-            <p class="title is-4 is-pulled-right">email</p>
-        </div>
-    </section>
- 
+    <!-- <section class="section"> -->
+        <h2 class="subtitle mt-4 mb-0 is-size-3 whatacrypto-blue has-text-centered" > Meet the Team </h2>
+    <!-- </section> -->
     
-    <div class="box" id="quote-box">
-        <h2 class="subtitle is-5" id="quote-text"></h2>
-        <p class="title is-5" id="quote-author"></p>
+
+    <section class="section">
+    <div class="block">
+        <div class="columns">
+            <div class="column is-one-fifth">
+                <figure class="image is-200x200">
+                    <img src="../glbAssets/placeholder-200x200.jpeg">
+                </figure>
+            </div>
+            <div class="column">
+                <div class= "box whatacrypto-color2">
+                    <p class="title is-5 whatacrypto-blue">Rafael</p>
+                    <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis
+                    egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit
+                    amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+                </div>
+            </div>
+    </div>
+
+    <div class="block">
+        <div class="columns">
+            <div class="column is-one-fifth">
+                <figure class="image is-200x200">
+                    <img src="../glbAssets/placeholder-200x200.jpeg">
+                </figure>
+            </div>
+            <div class="column">
+                <div class="box whatacrypto-color2">
+                    <p class="title is-5 whatacrypto-blue">Matthew</p>
+                    <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis
+                    egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit
+                    amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+                </div>
+            </div>
+    </div>
+
+    <div class="block">
+        <div class="columns">
+            <div class="column is-one-fifth">
+                <figure class="image is-200x200">
+                    <img src="../glbAssets/placeholder-200x200.jpeg">
+                </figure>
+            </div>
+            <div class="column">
+                <div class="box whatacrypto-color2">
+                    <p class="title is-5 whatacrypto-blue">Jesus</p>
+                    <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis
+                    egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit
+                    amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+                </div>
+            </div>
+    </div>
+
+    <div class="block">
+        <div class="columns">
+            <div class="column is-one-fifth">
+                <figure class="image is-200x200">
+                    <img src="../glbAssets/placeholder-200x200.jpeg">
+                </figure>
+            </div>
+            <div class="column">
+                <div class="box whatacrypto-color2">
+                    <p class="title is-5 whatacrypto-blue">Carlos</p>
+                    <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis
+                    egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit
+                    amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+                </div>
+            </div>
+    </div>
+
+    <div class="block">
+        <div class="columns">
+            <div class="column is-one-fifth">
+                <figure class="image is-200x200">
+                    <img src="https://civilrights.msu.edu/_assets/images/placeholder/placeholder-200x200.jpg">
+                </figure>
+            </div>
+            <div class="column">
+                <div class="box whatacrypto-color2">
+                    <p class="title is-5 whatacrypto-blue">Yen</p>
+                    <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis
+                    egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit
+                    amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+                </div>
+            </div>
+    </div>
+    </section>
+    <div class="py-3">
+        <nav class="breadcrumb has-arrow-separator ">
+            <ul class="container">
+                <li><a href="../index.html">
+                    <span class="icon is-small">
+                        <i class="fas fa-home whatacrypto-blue"></i>
+                    </span>
+                    <span class="whatacrypto-blue">Home</span>
+                </a></li>
+                <li><a class="whatacrypto-blue">About</a></li>
+                
+            </ul>
+        </nav>
     </div>
 
 
