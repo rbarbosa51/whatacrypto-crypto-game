@@ -8,18 +8,50 @@
     <link rel="stylesheet" href="../glbAssets/about.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <script src="https://kit.fontawesome.com/1a42e5e9cf.js" crossorigin="anonymous"></script>
     <title>Comment Section</title>
+
+
+    <style>
+        body{
+            background-image: url("https://i.ibb.co/k6Qdg3t/image-from-rawpixel-id-2371690-original.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+        .comment {
+            margin: 1rem;
+            width: 500px;
+        }
+        .blue {
+            background-color: #209cee;
+        }
+    </style>
+
 </head>
 
 <body>
 
-    <header>
-        <section class="hero is-info has-text-left">
-            <div class="hero-body">
-                <h1 class="title is-size-1">WhataCrypto</h1>
-            </div>
-        </section>
-      </header>
+
+    <section class="hero is-info is-small">
+        <div class="hero-body">
+            <div class="columns mx-0">
+                <div class="column is-half ">
+                    <h1 class="title is-pulled-left">What-a-Crypto</h1> 
+                </div>
+                <div class="column is-half">
+                    <nav class="breadcrumb is-pulled-right" aria-label="breadcrumbs">
+                        <a href="#">
+                            <span class="icon is-large">
+                                <i class="fas fa-2x fa-home" aria-hidden="true"></i>
+                            </span>
+                            <span>Home</span>
+                            </a>
+                    </nav>
+                </div>
+        </div>
+    </section>
+
 
       <div class="py-3">
         <nav class="breadcrumb whatacrypto-blue has-arrow-separator ">
@@ -49,28 +81,20 @@
                 <input class="input is-info" type="text" name="comment" required>
             </div>
           </div>
-        <div class="box has-text-centered">
-            <button class="button is-info">Submit</button>
+        <div class="control has-text-centered">
+            <button class="button is-info mb-6">Submit</button>
         </div>
     </form>
 
-    <div id="CommentSection"></div>
-
-    <div class="py-3">
-        <nav class="breadcrumb whatacrypto-blue has-arrow-separator ">
-            <ul class="container">
-                <li><a href="../index.html">
-                    <span class="icon is-small">
-                        <i class="fas fa-home whatacrypto-blue"></i>
-                    </span>
-                    <span class="whatacrypto-blue">Home</span>
-                </a></li>
-                <li><a class="whatacrypto-blue">Comments</a></li>
-                
-            </ul>
-        </nav>
+    <div class="columns is-mobile is-centered">
+        <div class="column is-three-fifths is-offset-one-fifth has-text-centered">
+            <div id="CommentSection"></div>
+        </div>
       </div>
+
+
     
+
     <script type="module">
         // Import the functions you need from the SDKs you need
         import { initializeApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js";
@@ -101,6 +125,7 @@
         //collection ref
         const colRef = collection(db, 'Comments');
         
+
         onSnapshot(colRef, (snapshot) => {
             let comments = [];
             snapshot.docs.forEach( (doc) => {
@@ -117,12 +142,15 @@
                 tmpNameDiv.classList.add('whatacrypto-blue');
                 const tmpCommentDiv = document.createElement('div');
                 tmpNameDiv.innerText = element.Name;
+
+                tmpNameDiv.classList.add('message-header', 'blue');
                 tmpCommentDiv.innerText = element.Comment;
+                tmpCommentDiv.classList.add('message-body');
+
                 tmpDiv.appendChild(tmpNameDiv);
                 tmpDiv.appendChild(tmpCommentDiv);
                 commentSection.appendChild(tmpDiv);
             })
-
         });
 
         const addBookForm = document.getElementById('commentAdd');
