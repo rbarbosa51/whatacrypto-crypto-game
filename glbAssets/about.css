@@ -1,0 +1,13 @@
+
+.whatacrypto-blue {
+    color: #209cee !important;
+    font-weight: bold !important;
+}
+.whatacrypto-color2 {
+    background-color: rgba(32,156,238,0.1) !important;
+}
+
+#game {
+    width: 600px;
+    height: 400px; 
+} 

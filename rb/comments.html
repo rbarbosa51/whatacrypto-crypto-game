@@ -4,9 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../glbAssets/about.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <script src="https://kit.fontawesome.com/1a42e5e9cf.js" crossorigin="anonymous"></script>
     <title>Comment Section</title>
+
 
     <style>
         body{
@@ -28,6 +32,7 @@
 
 <body>
 
+
     <section class="hero is-info is-small">
         <div class="hero-body">
             <div class="columns mx-0">
@@ -47,22 +52,32 @@
         </div>
     </section>
 
-    <div class="columns is-mobile">
-        <div class="column is-half is-offset-one-quarter">
-            <div class="box has-text-centered mx-auto">
-                <h2 class="subtitle">Comment Section</h2>
-            </div>
-        </div>
-    </div>
 
+      <div class="py-3">
+        <nav class="breadcrumb whatacrypto-blue has-arrow-separator ">
+            <ul class="container">
+                <li><a href="../index.html">
+                    <span class="icon is-small">
+                        <i class="fas fa-home whatacrypto-blue"></i>
+                    </span>
+                    <span class="whatacrypto-blue">Home</span>
+                </a></li>
+                <li><a class="whatacrypto-blue">Comments</a></li>
+                
+            </ul>
+        </nav>
+      </div>
+
+    
+    <h2 class="is-size-3 has-text-centered whatacrypto-blue mb-5">Comment Section</h2>
     <form id="commentAdd">
         <div class="columns mx-5">
             <div class="column is-half">
-                <label for="name">Enter your name: </label>
+                <label for="name" class="whatacrypto-blue">Enter your name: </label>
                 <input class="input is-info" type="text" name="name" required>
             </div>
             <div class="column is half">
-                <label for="comment">Enter your comments: </label>
+                <label for="comment" class="whatacrypto-blue">Enter your comments: </label>
                 <input class="input is-info" type="text" name="comment" required>
             </div>
           </div>
@@ -76,6 +91,7 @@
             <div id="CommentSection"></div>
         </div>
       </div>
+
 
     
 
@@ -98,6 +114,10 @@
         };
         //Reference to the Comment Section Div
         let commentSection = document.getElementById('CommentSection');
+        commentSection.classList.add('box');
+        commentSection.classList.add('whatacrypto-color2');
+        commentSection.classList.add('is-size-8');
+        commentSection.classList.add('mx-6');
         // Initialize Firebase
         const app = initializeApp(firebaseConfig);
         //Init services
@@ -117,13 +137,16 @@
             comments.forEach( (element) => {
                 
                 const tmpDiv = document.createElement('div');
-                tmpDiv.classList.add('comment');
-                const tmpNameDiv = document.createElement('span');
-                const tmpCommentDiv = document.createElement('span');
+                tmpDiv.classList.add('mb-3');
+                const tmpNameDiv = document.createElement('div');
+                tmpNameDiv.classList.add('whatacrypto-blue');
+                const tmpCommentDiv = document.createElement('div');
                 tmpNameDiv.innerText = element.Name;
+
                 tmpNameDiv.classList.add('message-header', 'blue');
                 tmpCommentDiv.innerText = element.Comment;
                 tmpCommentDiv.classList.add('message-body');
+
                 tmpDiv.appendChild(tmpNameDiv);
                 tmpDiv.appendChild(tmpCommentDiv);
                 commentSection.appendChild(tmpDiv);
@@ -138,6 +161,10 @@
                 Comment: addBookForm.comment.value
             }). then( () => {
                 addBookForm.reset();
+                //commentSection
+                commentSection.forEach( (node) => {
+                    commentSection.removeChild(node);
+                })
             })
         });
 

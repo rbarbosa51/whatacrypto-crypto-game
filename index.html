@@ -4,80 +4,95 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Whatacrypto</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma-rtl.min.css">
+    <title>WhataCrypto</title>
+    <script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-base.min.js"></script>
+    <link rel="stylesheet" href="./glbAssets/about.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    
 </head>
 <body>
-    <!--Main header here-->
-    <section class="hero is-primary">
+  <header>
+    <section class="hero is-info has-text-left">
         <div class="hero-body">
-          <p class="title">
-            <strong>Whatacrypto</strong>
-          </p>
-          <p class="subtitle">
-            Learn about crypto currency by playing <strong>crypto games</strong>
-          </p>
+            <h1 class="title is-size-1">WhataCrypto</h1>
+            <p class="subtitle has-text-right">Learn about crypto currency by playing this game</p>
         </div>
-      </section>
+    </section>
+  </header>
+  <div class="columns has-text-centered mx-4 is-size-12 my-1 ">
+      <div class="column is-3">
+        <a class="whatacrypto-blue" href="carlos_files/rules.html">Rules</a>
+      </div>
+      <div class="column is-3">
+        <a class="whatacrypto-blue" href="rb/comments.html">Comment Section</a>
+      </div>
+      <div class="column is-3">
+        <a class="whatacrypto-blue" href="matthew_files/highscores.html">High Scores</a>
+      </div>
+      <div class="column is-3">
+        <a class="whatacrypto-blue" href="yen_files/about.html">About Us</a>
+      </div>
+  </div>
+  <h2 class="is-size-3 has-text-centered whatacrypto-blue">Crypto Game</h2>
+  <div class="box has-text-centered">
+    <p>WhataCrypto is a cryptocurrency game that allows people to make decisions on how and when to 
+      buy and sell crypto.
+    </p>
+    <p>WhataCrypto promotes strategic thinking and gives people opportunities to learn in a 
+      low stakes environment.</p>
+  </div>
+  <div class="box has-text-centered">
+        <button id="start" class="button is-info">Start Game</button><br>
+        <div class="columns is-centered">
+            <div id="game" class="column is-10 has-text-cetered"></div>
+        </div>
+        <div>
+            <span class="content is-medium">Current Value:</span>
+            <span id="currentValue" class="content is-medium" style="margin: 0 1rem 0 0;">0</span>
+        </div>
+        <div>
+            <span class="content is-medium">Buys Remaining:</span>
+            <span id="transactions" class="content is-medium" style="margin: 0 1rem 0 0;">10</span>
+            <span class="content is-medium">Buy Stack:</span>
+            <span id="buyStack" class="content is-medium" style="margin: 0 1rem 0 0;">0</span>
+            <span class="content is-medium">Score:</span>
+            <span id="scoreLbl" class="content is-medium" style="margin: 0 1rem 0 0;">0</span>
+            <span class="content is-medium">Timer:</span>
+            <span id="timerLbl" class="content is-medium">60</span>
+        </div>
+        <div>
+            <button id="buy" class="button is-primary is-light">Buy</button>
+            <button id="sell" class="button is-danger is-light">Sell</button>
+        </div>
+        <div id="infoLbl"></div>
+
+    </div>
+    <div class="modal" id="modalScore">
+      <div class="modal-background"></div>
+      <div class="modal-content has-background-white py-5 px-5">
+          <h3 class="title mb-6" id="scoreH3"></h3>
+          <!-- <div id="modalScore"></div>
+          <p class="has-text-centered">Your score was saved to local Storage</p>
+          <button class="button" id="modalIntButton">Close</button> -->
+      </div>
+      <button class="modal-close is-large" id="modalClose"></button>
+  </div>
+  <div>
+    <div class="columns">
+      <h1 class="column is-half">Share your results!</h1>
+    </div>
     
-    
-      <!--Navigation bar below with active drop down menu-->
-
-      <nav class="navbar" role="navigation" aria-label="main navigation">
-        <div class="navbar-brand">
-          <a>
-            <img src="indeximages.jpg/wclogo.jpg" width="100" height="250">
-          </a>
-      
-          <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-          </a>
-        </div>
-      
-        <div id="navbarBasicExample" class="navbar-menu">
-          <div class="navbar-start">
-            <a class="navbar-item">
-              Home
-            </a>
-      
-            <div class="navbar-item has-dropdown is-hoverable">
-              <a class="navbar-link">
-                More
-              </a>
-      
-              <div class="navbar-dropdown">
-                <a class="navbar-item">
-                  About Us
-                </a>
-                <a class="navbar-item">
-                  Rules
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </nav>
-    <br>
-    <br>
-    <button class="button is-primary">Start</button>
-
-    <!--Game below-->
-
-    <div id="container" width="800px" height="500px">
+    <div class="columns">
+      <div class="column is-1">
+        <a href="https://twitter.com/intent/tweet?text=tweeting"><i class="fa-brands fa-twitter"></i></a>
+      </div>
+      <div class="column is-1">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//fontawesome.com/search?q=file%253A%252F%252F%252FC%253A%252FUsers%252FCxLos%252Fbootcamp%252Fassignments%252Fprojects%252Fproject1%252Fwhatacrypto-crypto-game%252Fcarlos_files%252Fcarlos.html%26o=r"><i class="fa-brands fa-facebook"></i></a>
+      </div>
     </div>
 
-    <a href="/rb/comments.html"></a>
-    <footer class="footer">
-        <div class="content has-text-centered">
-          <p>
-            <strong>Whatacrypto</strong> by Whatacrew a group based in Texas and one
-            guy from Colorado. This source code is licensed by me. If you copy this
-            I will come to your house and slap you with a soggy whataburger!
-        </div>
-      </footer>
-
-    <script src="script.js"></script>
+  </div>
+    <script src="rb/game.js"></script>
 </body>
 </html>
