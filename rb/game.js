@@ -108,6 +108,7 @@ let startGame = () => {
             
         })
         .catch( (e) => {
+            //In the event that I run out of daily requests
             console.log(e);
         })
     

@@ -13,14 +13,11 @@ var pastPlayers = [
     {name: "Joe5", score: 95.239 },
 ];
 
-var storageValue = localStorage.getItem("currentUser");
+var storageValue = parseFloat(localStorage.getItem("currentUser")).toFixed(2);
 console.log(storageValue);
 var tempObjects = {name: "currentUser", score: storageValue}
 console.log(tempObjects)
-
 pastPlayers.push(tempObjects)
-
-
 pastPlayers.sort((a, b) => b.score - a.score)
 
 var scoreBoard = document.getElementById('scoreBoard')
@@ -35,7 +32,9 @@ scoreBoard.appendChild(orderedList)
 
 // scoreBoard.classList.add(boulma css style)
 pastPlayers.forEach( (element) => {
-    var strInfo = `Name: ${element.name}, Score:  ${element.score}`;
+    var tmpScore = parseFloat(element.score).toFixed(2);
+    console.log(typeof tmpScore);
+    var strInfo = `Name: ${element.name}, Score:  BTC ${tmpScore}`;
     var tempElement = document.createElement('li');
     tempElement.innerText = strInfo;
     orderedList.appendChild(tempElement);
