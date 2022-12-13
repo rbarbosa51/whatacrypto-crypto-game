@@ -9,6 +9,7 @@ WhataCrypto is a cryptocurrency game that allows people to make decisions on how
 - [Installation](#installation)
 - [References](#references)
 - [TeamMembers](#team-members)
+- [Slides](#slides)
 - [License](#license)
 
 ## Description
@@ -60,6 +61,8 @@ Jesus Perez Alvarado
 
 Yen Nguyen
 
+## Slides
+Slides: [Slides](./What-a-Crypto%20Presentation.pptx)
 
 ## License
 
